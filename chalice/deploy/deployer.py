@@ -626,9 +626,9 @@ class LambdaDeployer(object):
                 'timeout': self._get_lambda_timeout(config),
                 'memory_size': self._get_lambda_memory_size(config),
             }  # type: Dict[str, Any]
-            if config.security_group_ids is not None:
+            if config.security_group_ids:
                 kwargs['security_group_ids'] = config.security_group_ids
-            if config.security_group_ids is not None:
+            if config.subnet_ids:
                 kwargs['subnet_ids'] = config.subnet_ids
             function_arn = self._aws_client.create_function(**kwargs)
         deployed_values.setdefault('lambda_functions', {})[function_name] = {

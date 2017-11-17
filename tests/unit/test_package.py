@@ -373,6 +373,7 @@ def test_app_with_auth_but_invalid_cfn_name(sample_app,
         }
     }
 
+
 def test_vpc_config_added_to_function(sample_app,
                                       mock_swagger_generator,
                                       mock_policy_generator):
